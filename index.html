@@ -21,19 +21,18 @@
         <button class="nav-item" data-view="effects"><span>↗</span> 산업 간 파급효과</button>
         <button class="nav-item" data-view="simulator"><span>◈</span> 수요충격 시뮬레이터</button>
         <button class="nav-item" data-view="data"><span>▤</span> 데이터 탐색</button>
+        <a class="nav-item" href="excel-explorer.html" style="text-decoration:none"><span>▧</span> 원본 엑셀 탐색</a>
       </nav>
       <div class="sidebar-bottom">
         <div class="data-status"><i></i><span>2023년 산업연관표 연결됨</span></div>
         <small>한국은행 · 생산자가격 기준</small>
       </div>
     </aside>
-
     <main class="main-content">
       <header class="topbar">
         <div class="crumb">대한민국 산업연관분석 <span>/</span> <b id="crumb-current">산업구조 대시보드</b></div>
         <div class="top-meta"><span class="year-pill">2023 DATA</span><span class="avatar">IO</span></div>
       </header>
-
       <section class="page-heading">
         <div><div class="eyebrow">KOREA INDUSTRY NETWORK · 2023</div><h1 id="page-title">산업구조 대시보드</h1><p id="page-desc">산업별 생산·부가가치·수입 구조를 한눈에 살펴봅니다.</p></div>
         <label class="level-control">산업 분류
@@ -42,7 +41,6 @@
           </select>
         </label>
       </section>
-
       <div id="loading" class="loading-panel">산업연관표 데이터를 불러오는 중입니다…</div>
       <div id="app-content" hidden>
         <section class="view active" id="view-overview">
@@ -61,7 +59,6 @@
           </div>
           <article class="panel insight-panel"><div class="insight-icon">i</div><div><b>이 대시보드에서 확인할 수 있는 것</b><p>수입 중간재 의존도가 높은 산업은 해외 공급망 변화에 더 민감할 수 있습니다. 반면 생산유발계수가 높은 산업은 최종수요 변화가 다른 산업으로 전달되는 파급효과가 상대적으로 큽니다. 두 지표를 함께 비교해 산업별 특성을 살펴보세요.</p></div></article>
         </section>
-
         <section class="view" id="view-industry">
           <article class="panel selector-panel">
             <div><span class="eyebrow">INDUSTRY PROFILE</span><h2>분석할 산업을 선택하세요</h2><p class="panel-sub">산업명 또는 분류 코드를 검색할 수 있습니다.</p></div>
@@ -69,7 +66,6 @@
           </article>
           <div id="industry-profile"></div>
         </section>
-
         <section class="view" id="view-effects">
           <article class="panel">
             <div class="panel-head"><div><span class="eyebrow">INDUSTRY LINKAGE</span><h2>산업별 파급효과 순위</h2><p class="panel-sub">선택한 지표를 기준으로 산업을 비교합니다.</p></div></div>
@@ -78,7 +74,6 @@
           </article>
           <div class="note-line">※ 유발계수는 해당 산업의 최종수요 1단위 증가에 의해 직·간접적으로 유발되는 금액의 크기를 나타냅니다.</div>
         </section>
-
         <section class="view" id="view-simulator">
           <div class="sim-layout">
             <article class="panel sim-input">
@@ -92,7 +87,6 @@
             <div class="sim-results" id="simulation-results"></div>
           </div>
         </section>
-
         <section class="view" id="view-data">
           <article class="panel">
             <div class="panel-head"><div><span class="eyebrow">DATA EXPLORER</span><h2>산업별 지표 데이터</h2><p class="panel-sub">분류별 산업 지표를 검색하고 CSV 파일로 내려받을 수 있습니다.</p></div><button id="download-csv" class="secondary-btn">↓ CSV 다운로드</button></div>
