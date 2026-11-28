@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b2d">
+  <title>원본 엑셀 탐색 | Industry Supply Chain Lab</title>
+  <link rel="stylesheet" href="excel-explorer.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">IO</span><span><b>INDUSTRY</b><small>SUPPLY CHAIN LAB</small></span></a>
+    <a class="back-link" href="index.html">← 산업 분석 대시보드</a>
+  </header>
+  <main class="container">
+    <section class="intro">
+      <div class="eyebrow">SOURCE DATA EXPLORER · 2023</div>
+      <h1>원본 산업연관표 탐색</h1>
+      <p>한국은행 2023년 산업연관표 원본 Excel 파일을 불러와 분류별 파일, 시트, 산업 항목을 검색하고 확인합니다.</p>
+    </section>
+    <section class="panel loader-panel">
+      <div class="panel-title"><div><span class="eyebrow">STEP 01</span><h2>엑셀 자료 불러오기</h2></div><span class="step-tag">원본 Excel</span></div>
+      <div class="controls">
+        <label>산업 분류 파일
+          <select id="workbook-select">
+            <option value="data/io-2023-large.xlsx">통합대분류 (33부문)</option>
+            <option value="data/io-2023-medium.xlsx">통합중분류 (83부문)</option>
+            <option value="data/io-2023-small.xlsx">통합소분류 (165부문)</option>
+            <option value="data/io-2023-basic.xlsx">기본부문 (380부문)</option>
+          </select>
+        </label>
+        <button id="load-workbook" class="primary">선택한 엑셀 불러오기</button>
+      </div>
+      <div class="or-line"><span>또는 내 컴퓨터의 Excel 파일 직접 선택</span></div>
+      <label class="file-picker">Excel 파일 선택 (.xlsx)
+        <input id="local-file" type="file" accept=".xlsx,.xls">
+      </label>
+      <p id="load-status" class="status" role="status">아직 엑셀 파일을 불러오지 않았습니다. 분류를 선택하고 버튼을 눌러주세요.</p>
+    </section>
+    <section id="explorer" class="panel" hidden>
+      <div class="summary-grid" id="workbook-summary"></div>
+      <div class="panel-title sheet-title"><div><span class="eyebrow">STEP 02</span><h2>시트 선택 및 검색</h2></div><button id="download-sheet" class="secondary">현재 시트 CSV 저장</button></div>
+      <div class="controls explorer-controls">
+        <label>엑셀 시트<select id="sheet-select"></select></label>
+        <label class="search-label">시트 내용 검색<input id="sheet-search" type="search" placeholder="산업명, 코드, 숫자 등 검색"></label>
+      </div>
+      <div class="sheet-meta" id="sheet-meta"></div>
+      <div class="column-tools">
+        <span id="column-range">열 1–20</span>
+        <div><button id="prev-columns" class="secondary" disabled>← 이전 열</button><button id="next-columns" class="secondary">다음 열 →</button></div>
+      </div>
+      <div class="table-wrap"><table id="sheet-table"><thead></thead><tbody></tbody></table></div>
+      <div class="pagination"><span id="row-count"></span><div><button id="prev-page" class="secondary" disabled>이전</button><span id="page-label">1 / 1</span><button id="next-page" class="secondary" disabled>다음</button></div></div>
+      <p class="footnote">표는 원본 시트의 셀 값을 표시합니다. 열이 많은 투입산출표는 20개 열 단위로 이동해 확인할 수 있으며, 검색은 현재 시트 전체 셀을 대상으로 합니다. 금액 단위와 가격 기준은 각 시트 상단의 원본 표기를 확인하세요.</p>
+    </section>
+    <section class="notice"><b>자료 이용 안내</b><p>원본 엑셀 탐색은 자료의 시트와 셀 내용을 확인하기 위한 기능입니다. 기존 대시보드의 지표·시뮬레이션은 별도로 가공된 <code>industry-data.json</code>을 사용합니다. 원본 자료를 불러왔다고 해서 기존 분석 데이터가 자동으로 교체되지는 않습니다.</p></section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="excel-explorer.js"></script>
+</body>
+</html>
