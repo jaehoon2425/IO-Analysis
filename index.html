@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#2b2e34">
+  <meta name="theme-color" content="#f5f7fa">
   <title>산업 공급망 인사이트 | 2023 산업연관분석</title>
-  <link rel="stylesheet" href="style.css?v=charcoal1">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-shell">
@@ -31,7 +31,7 @@
     <main class="main-content">
       <header class="topbar">
         <div class="crumb">대한민국 산업연관분석 <span>/</span> <b id="crumb-current">산업구조 대시보드</b></div>
-        <div class="top-meta"><span class="year-pill">2023 DATA</span><span class="avatar">IO</span></div>
+        <div class="top-meta"><span class="year-pill">2023 · 연장표</span><a class="source-link" href="excel-explorer.html">원본 자료 ↗</a></div>
       </header>
       <section class="page-heading">
         <div><div class="eyebrow">KOREA INDUSTRY NETWORK · 2023</div><h1 id="page-title">산업구조 대시보드</h1><p id="page-desc">산업별 생산·부가가치·수입 구조를 한눈에 살펴봅니다.</p></div>
@@ -44,8 +44,8 @@
       <div id="loading" class="loading-panel">산업연관표 데이터를 불러오는 중입니다…</div>
       <div id="app-content" hidden>
         <section class="view active" id="view-overview">
-          <div class="stat-grid" id="overview-stats"></div>
-          <div class="content-grid two-col">
+          <div class="section-label">핵심 지표 <span>선택 분류 기준 · 산업별 단순평균</span></div><div class="stat-grid" id="overview-stats"></div><div class="section-label">산업 비교 <span>상위 7개 산업</span></div>
+          <div class="content-grid two-col dashboard-charts">
             <article class="panel">
               <div class="panel-head"><div><span class="eyebrow">IMPORT EXPOSURE</span><h2>수입 중간재 의존도가 높은 산업</h2></div><span class="panel-icon">↗</span></div>
               <p class="panel-sub">총산출액 대비 수입 중간재 투입액 비율 기준</p>
@@ -57,7 +57,7 @@
               <div id="top-production" class="bar-list"></div>
             </article>
           </div>
-          <article class="panel insight-panel"><div class="insight-icon">i</div><div><b>이 대시보드에서 확인할 수 있는 것</b><p>수입 중간재 의존도가 높은 산업은 해외 공급망 변화에 더 민감할 수 있습니다. 반면 생산유발계수가 높은 산업은 최종수요 변화가 다른 산업으로 전달되는 파급효과가 상대적으로 큽니다. 두 지표를 함께 비교해 산업별 특성을 살펴보세요.</p></div></article>
+          <div class="section-label lower-label">분석 도구</div><div class="tool-grid"><button data-jump="industry"><b>산업별 상세 분석</b><small>국산·수입 중간재 구조 확인</small><span>↗</span></button><button data-jump="effects"><b>산업 간 파급효과</b><small>유발계수 순위 비교</small><span>↗</span></button><button data-jump="simulator"><b>수요충격 시뮬레이터</b><small>최종수요 변화의 영향 계산</small><span>↗</span></button></div><article class="panel insight-panel"><div class="insight-icon">i</div><div><b>이 대시보드에서 확인할 수 있는 것</b><p>수입 중간재 의존도가 높은 산업은 해외 공급망 변화에 더 민감할 수 있습니다. 반면 생산유발계수가 높은 산업은 최종수요 변화가 다른 산업으로 전달되는 파급효과가 상대적으로 큽니다. 두 지표를 함께 비교해 산업별 특성을 살펴보세요.</p></div></article>
         </section>
         <section class="view" id="view-industry">
           <article class="panel selector-panel">
